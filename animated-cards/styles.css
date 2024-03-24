@@ -1,1 +1,76 @@
+*, *::before, *::after {
+    font-family: 'Open Sans', sans-serif;
+}
+.card-grid{
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+.card{
+    --padding: 1rem;
+    background-color: white;
+    border: 1px solid #777;
+    border-radius: .25rem;
+    overflow: hidden;
+}
+.card.card-shadow{
+    border: none;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.7);
+    align-items: flex-start;
+}
+.card-header{
+    font-size: 1.5rem;
+    margin-bottom: .5rem;
+    padding: var(--padding);
+    padding-bottom: 0;
+}
+.card-header.card-image{
+    overflow: hidden;
+    padding: 0;
+}
+.card-header.card-image > img {
+    display: block;
+    width: 100%;
+    max-height: 200px;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    object-position: center;
+    transition: 200ms transform ease-in-out;
+}
+.card-body{
+    font-size: .9rem;
+    padding: 0 var(--padding);
+}
+.card-footer{
+    margin-top: 1rem;
+    padding: var(--padding);
+    padding-top: 0;
+}
+.card:hover > .card-header.card-image > img{
+    transform: scale(1.025);
 
+}
+.btn{
+    --color: hsl(200, 50%, 50%);
+    background: var(--color);
+    border: none;
+    color: white;
+    padding: .5em .75em;
+    border-radius: .25em;
+    cursor: pointer;
+}
+.btn:hover, .btn:focus{
+    background-color: hsl(200, 50%, 60%);
+}
+.btn.btn-outline {
+    background: none;
+    border: 1px solid var(--color);
+    color: var(--color);
+}
+.btn.btn-outline:hover, .btn.btn-outline:focus{
+    background: hsl(200, 50%, 90%);
+}
+/* If you have a button directly followed by another button put some space on the left of the second button*/
+.btn + .btn {
+    margin-left: .25rem;
+} 
